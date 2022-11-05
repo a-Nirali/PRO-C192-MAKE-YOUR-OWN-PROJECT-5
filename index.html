@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="./js/tour.js"></script>
+  <script src="./js/cursor_events.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-sky id="main-container" radius="5000" color="#1abc9c"></a-sky>
+
+    <a-camera id="camera" wasd-controls="enabled:false;">
+      <a-entity id="camera-cursor" cursor position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #fff; shader: flat">
+      </a-entity>
+    </a-camera>
+
+    <a-assets>
+      <a-video id="intro" src="./assets/Welcome to INDIA.mp4" loop="true"></a-video>
+    </a-assets>
+
+    <a-video src="#intro" width="70" height="30" position="0 -3 -20" autoplay></a-video>
+
+    <a-entity id="app-title" position="0 2.3 -1"
+      text="font: exo2bold; align: center; width: 2; color: #000; value:WELCOME TO CULTURAL INDIA!">
+
+      <a-entity id="app-subtitle" position="0 -0.1 0"
+        text="font: dejavu; align: center; width: 1; color: #0F184E; value:Explore the vast Indian Culture!"></a-entity>
+    </a-entity>
+
+    <a-entity id="title" position="0 -10 -1"
+    text="font: exo2bold; align: center; width: 2; color: #000; value:About INDIA">
+    </a-entity>
+
+    <a-entity id="about_india" position="0 -23 -1" text="font: dejavu; align: center; width: 1; color: #0F184E; value: 
+      The rich heritage of India, one of the world’s oldest civilizations, is an all-embracing confluence of
+      religions, traditions and customs.
+      The highlights of Indian heritage lie in the treasure of its art, architecture, classical dance, music,
+      flora and fauna, and the innate secular philosophy of its people.
+      A visit to the heritage sites is like a walk through history, changing lanes with every dynasty that ruled
+      Indian soils. The finesse of Indian handiwork, the richness of
+      silk and cotton textiles, the ethnicity of jewellery, everything has come down as a heritage from ancient
+      times and is being kept alive generation after generation.
+      Even food in India is a legacy and part of Indian heritage, differing in look and taste in every state of
+      India.">
+
+    </a-entity>
+
+
+    <a-entity id="places-container" cursor-listener tour></a-entity>
+
+  </a-scene>
+</body>
+
+</html>
